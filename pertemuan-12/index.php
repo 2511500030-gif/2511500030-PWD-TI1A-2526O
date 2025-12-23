@@ -118,8 +118,27 @@
           ?>
 
           <section id="contact">
-            <h2>Kontak Kami</h2>
-            <
+            <h2>Edit Buku Tamu</h2>
+            <form action="edit.php?cid=<?= $cid ?>" method="POST">
+              <label for="txtNama"><span>Nama:</span>
+                <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name"
+                      value="<?= htmlspecialchars($nama) ?>">
+              </label>
+
+              <label for="txtEmail"><span>Email:</span>
+                <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email"
+                      value="<?= htmlspecialchars($email) ?>">
+              </label>
+
+              <label for="txtPesan"><span>Pesan Anda:</span>
+                <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required><?= 
+                  htmlspecialchars($pesan) 
+                ?></textarea>
+              </label>
+
+              <button type="submit">Simpan</button>
+              <button type="reset">Batal</button>
+            </form>
             <?php if (!empty($flash_sukses)): ?>
               <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px">
                 <?= $flash_sukses; ?>
