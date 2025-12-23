@@ -7,3 +7,4 @@ Hari ini, Rabu 17.Des.2025, saya belajar:<br>
 <li>menambahkan kolom aksi setelah kolom No</li>
 <li>membuat link edit yang aman, cid di casting saat output</li>
 <li>buat file baru dengan nama edit.php</li>
+<li>menambahkan penampil flash sukses dan flash error</li>
