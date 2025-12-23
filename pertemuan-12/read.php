@@ -1,7 +1,7 @@
 <?php
-    session_start();
-require 'koneksi.php';
-require 'fungsi.php';
+  session_start();
+  require 'koneksi.php';
+  require 'fungsi.php';
 
 $sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
 $q = mysqli_query($conn, $sql);
@@ -19,19 +19,19 @@ if (!$q) {
 
 <?php if (!empty($flash_sukses)) : ?>
     <div style="padding:10px; margin-bottom:10px;
-      background:#d4edda; color:#155724; border:1px solid #c3e6cb;
+      background:#d4edda; color:#155724; border:1px solid #92f0ffff;
       <?= $flash_sukses; ?>
     </div>
 <?php endif; ?>
 
 <?php if (!empty($flash_error)) : ?>
     <div style="padding:10px; margin-bottom:10px;
-      background:#f8d7da; color:#721c24; border:1px solid #f5c6cb;
+      background:#f8d7da; color:#721c24; border-radius:6px solid #db9198ff;
       <?= $flash_error; ?>
     </div>
 <?php endif; ?>
 
-<table border="1" cellpadding="10" cellspacing="0">
+<table border="1" cellpadding="8" cellspacing="0">
     <tr>
         <th>No</th>
         <th>Aksi</th>
