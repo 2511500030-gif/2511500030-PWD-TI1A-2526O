@@ -23,6 +23,7 @@
         <?php while ($row = mysqli_fetch_assoc($q)): ?>
         <tr>
             <td><?= $no++; ?></td>
+            <td><a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a></td>
             <td><?= htmlspecialchars($row['cid']); ?></td>
             <td><?= htmlspecialchars($row['cnama']); ?></td>
             <td><?= htmlspecialchars($row['cemail']); ?></td>
