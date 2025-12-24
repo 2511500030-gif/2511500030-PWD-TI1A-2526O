@@ -35,7 +35,7 @@ CREATE TABLE `tbl_tamu` (
   `cemail` varchar(100) DEFAULT NULL,
   `cpesan` text,
   `dcreated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `tbl_tamu`
