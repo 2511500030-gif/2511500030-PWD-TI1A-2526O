@@ -8,4 +8,5 @@ Hari ini, Rabu 24.Des.2025, saya belajar:<br>
 <li>import file sql pwd</li>
 <li>membuat proses delete untuk ke proses_delete.php</li>
 <li>mengcopy seluruh kode dari proses_update.php ke proses_delete.php</li>
+<li>update proses_delete.php</li>
 </ol>
