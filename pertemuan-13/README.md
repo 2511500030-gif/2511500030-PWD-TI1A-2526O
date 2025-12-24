@@ -4,3 +4,5 @@ Nama : Monika Aldesia Plaron<br>
 Hari ini, Rabu 24.Des.2025, saya belajar:<br>
 <ol>
 <li>mendownload dan mengekstrak bahan ajar dari bapak di elearning ke folder pertemuan-13</li>
+<li>drop database pwd_2025</li>
+<li>import file sql pwd</li>
