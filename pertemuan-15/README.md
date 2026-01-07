@@ -4,3 +4,4 @@ Nama : Monika Aldesia Plaron<br>
 Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <ol>
 <li>Mengekstrak file dari bapak ke file pertemuan-15</li>
+<li>Membuat tabel baru di database dengan nama tbl_pengunjung</li>
