@@ -3,7 +3,7 @@
   require 'koneksi.php';
   require 'fungsi.php';
 
-  $sql = "SELECT * FROM tbl_pengunjung ORDER BY cid DESC";
+  $sql = "SELECT * FROM tbl_pengunjung_biodata ORDER BY cid DESC";
   $q = mysqli_query($conn, $sql);
   if (!$q) {
     die("Query error: " . mysqli_error($conn));
