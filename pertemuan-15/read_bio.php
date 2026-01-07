@@ -3,7 +3,7 @@
   require 'koneksi.php';
   require 'fungsi.php';
 
-  $sql = "SELECT * FROM tbl_pengunjung_biodata ORDER BY cid DESC";
+  $sql = "SELECT * FROM tbl_pengunjung_biodata_mahasiswa ORDER BY id DESC";
   $q = mysqli_query($conn, $sql);
   if (!$q) {
     die("Query error: " . mysqli_error($conn));
@@ -52,20 +52,20 @@
     <tr>
       <td><?= $i++ ?></td>
       <td>
-        <a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
+        <a href="edit.php?id=<?= (int)$row['id']; ?>">Edit</a>
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['nama']); ?>?')" href="proses_delete.php?id=<?= (int)$row['id']; ?>">Delete</a>
       </td>
-      <td><?= $row['cid']; ?></td>
-      <td><?= htmlspecialchars($row['cnim']); ?></td>
-      <td><?= htmlspecialchars($row['cnama']); ?></td>
-      <td><?= htmlspecialchars($row['ctempat_lahir']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['ctanggal_lahir'])); ?></td>
-      <td><?= htmlspecialchars($row['chobi']); ?></td>
-      <td><?= htmlspecialchars($row['cpasangan']); ?></td>
-      <td><?= htmlspecialchars($row['cpekerjaan']); ?></td>
-      <td><?= htmlspecialchars($row['cnama_ortu']); ?></td>
-      <td><?= htmlspecialchars($row['cnama_kakak']); ?></td>
-      <td><?= htmlspecialchars($row['cnama_adik']); ?></td>
+      <td><?= $row['id']; ?></td>
+      <td><?= htmlspecialchars($row['nim']); ?></td>
+      <td><?= htmlspecialchars($row['nama']); ?></td>
+      <td><?= htmlspecialchars($row['tempat_lahir']); ?></td>
+      <td><?= formatTanggal(htmlspecialchars($row['tanggal_lahir'])); ?></td>
+      <td><?= htmlspecialchars($row['hobi']); ?></td>
+      <td><?= htmlspecialchars($row['pasangan']); ?></td>
+      <td><?= htmlspecialchars($row['pekerjaan']); ?></td>
+      <td><?= htmlspecialchars($row['nama_ortu']); ?></td>
+      <td><?= htmlspecialchars($row['nama_kakak']); ?></td>
+      <td><?= htmlspecialchars($row['nama_adik']); ?></td>
       <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
     </tr>
   <?php endwhile; ?>

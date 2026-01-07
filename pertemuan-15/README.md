@@ -9,3 +9,4 @@ Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <li>Copy dan modif kode dari read.php ke read_bio.php</li>
 <li>Membuat table baru di database dengan nama tbl_pengunjung_biodata karena yang tadi salah</li>
 <li>Membuat table baru di database dengan nama tbl_pengunjung_biodata_mahasiswa karena yang tadi salah</li>
+<li>Menghapus field cid</li>
