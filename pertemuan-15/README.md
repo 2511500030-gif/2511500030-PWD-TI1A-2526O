@@ -12,3 +12,4 @@ Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <li>Menghapus field cid</li>
 <li>Membuat file baru dengan nama proses_bio.php</li>
 <li>Mengcopy dan modif kode dari file proses.php ke proses_bio.php</li>
+<li>Membuat file edit_bio.php</li>
