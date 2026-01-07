@@ -13,3 +13,7 @@ Hari ini, Rabu 24.Des.2025, saya belajar:<br>
 <li>memperbaiki file proses_delete.php agar menggunakan parameter cid</li>
 <li>menambahkan konfirmasi penghapusan untuk link delete di read.php</li>
 </ol>
+
+Latihan Untuk Try out
+<ol>
+<li>membuat tbl_tentang_saya_latihan di db_pwd2025</li>
