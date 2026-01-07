@@ -177,7 +177,7 @@
 
           <button type="submit">Kirim</button>
           <button type="reset">Batal</button>
-          <a href="read.php" class="reset">Kembali</a>
+          <a href="read_bio.php" class="reset">Kembali</a>
         </form>
       </section>
     </main>
