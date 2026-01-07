@@ -94,6 +94,13 @@ require_once __DIR__ . '/fungsi.php';
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
+
+      <br>
+      <hr>
+      <h2>Tampilkan Biodata Mahasiswa</h2>
+      <?php include 'read_bio.php'; ?>
+    </section>
+  </main>
     </section>
 
     <?php
