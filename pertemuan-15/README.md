@@ -18,3 +18,4 @@ Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <li>Mengcopy dan modif kode dari read_inc.php ke read_inc_bio.php</li>
 <li>Mengcopy dan modif kode dari edit.php ke edit_bio.php</li>
 <li>Membuat file baru dengan nama proses_update_bio.php</li>
+<li>Mengcopy dan modif kode dari proses_update.php ke proses_update_bio.php</li> 
