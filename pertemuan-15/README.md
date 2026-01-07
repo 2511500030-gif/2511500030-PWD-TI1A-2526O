@@ -15,3 +15,4 @@ Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <li>Membuat file edit_bio.php</li>
 <li>Modif kode di section about di index.php</li>
 <li>Membuat file baru dengan nama read_inc_bio.php</li>
+<li>Mengcopy dan modif kode dari read_inc.php ke read_inc_bio.php</li>
