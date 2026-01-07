@@ -20,3 +20,4 @@ Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <li>Membuat file baru dengan nama proses_update_bio.php</li>
 <li>Mengcopy dan modif kode dari proses_update.php ke proses_update_bio.php</li> 
 <li>Membuat file baru dengan nama proses_delete_bio.php</li>
+<li>Mengcopy dan modif kode dari proses_delete.php ke proses_delete_bio.php</li>
