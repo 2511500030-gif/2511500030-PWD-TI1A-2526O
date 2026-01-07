@@ -35,6 +35,7 @@
   <tr>
     <th>No</th>
     <th>Aksi</th>
+    <th>ID</th>
     <th>NIM</th>
     <th>Nama Lengkap</th>
     <th>Tempat Lahir</th>
@@ -57,16 +58,16 @@
       </td>
       <td><?= $row['id']; ?></td>
       <td><?= htmlspecialchars($row['nim']); ?></td>
-      <td><?= htmlspecialchars($row['nama']); ?></td>
-      <td><?= htmlspecialchars($row['tempat_lahir']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['tanggal_lahir'])); ?></td>
+      <td><?= htmlspecialchars($row['nama_lengkap']); ?></td>
+      <td><?= htmlspecialchars($row['tmpt_lahir']); ?></td>
+      <td><?= formatTanggal(htmlspecialchars($row['tgl_lahir'])); ?></td>
       <td><?= htmlspecialchars($row['hobi']); ?></td>
       <td><?= htmlspecialchars($row['pasangan']); ?></td>
       <td><?= htmlspecialchars($row['pekerjaan']); ?></td>
       <td><?= htmlspecialchars($row['nama_ortu']); ?></td>
       <td><?= htmlspecialchars($row['nama_kakak']); ?></td>
       <td><?= htmlspecialchars($row['nama_adik']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['dcreated_at'])); ?></td>
+     <td><?= isset($row['created_at']) ? formatTanggal($row['created_at']) : '-'; ?></td>
     </tr>
   <?php endwhile; ?>
 </table>
