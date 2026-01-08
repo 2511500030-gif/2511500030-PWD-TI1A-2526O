@@ -24,7 +24,7 @@ if (!$q) {
 } else {
   while ($row = mysqli_fetch_assoc($q)) {
     $arrBiodata = [
-      "nim" => $row["cnim"] ?? "",
+      "nim" => $row["nim"] ?? "",
       "nama_lengkap" => $row["nama_lengkap"] ?? "",
       "tempat_lahir" => $row["tempat_lahir"] ?? "",
       "tanggal_lahir" => $row["tanggal_lahir"] ?? "",

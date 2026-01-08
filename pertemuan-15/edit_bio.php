@@ -9,7 +9,7 @@
     'options' => ['min_range' => 1] artinya cid harus ≥ 1 
     (bukan 0, bahkan bukan negatif, bukan huruf, bukan HTML).
   */
-  $cid = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
+  $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
     'options' => ['min_range' => 1]
   ]);
   /*
@@ -30,7 +30,7 @@
     mengirim penanda error.
   */
   if (!$id) {
-    $_SESSION['flash_error'] = 'Akses tidak valid.';
+    $_SESSION['flash_error_bio'] = 'Akses tidak valid.';
     redirect_ke('read_bio.php');
   }
 
@@ -38,11 +38,11 @@
     Ambil data lama dari DB menggunakan prepared statement, 
     jika ada kesalahan, tampilkan penanda error.
   */
-  $stmt = mysqli_prepare($conn, "SELECT id, nim, nama lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik 
-                                    FROM tbl_tamu WHERE id = ? LIMIT 1");
+  $stmt = mysqli_prepare($conn, "SELECT id, nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik 
+                                    FROM tbl_pengunjung_biodata_mahasiswa WHERE id = ? LIMIT 1");
   if (!$stmt) {
-    $_SESSION['flash_error'] = 'Query tidak benar.';
-    redirect_ke('read.php');
+    $_SESSION['flash_error_bio'] = 'Query tidak benar.';
+    redirect_ke('read_bio.php');
   }
 
   mysqli_stmt_bind_param($stmt, "i", $id);
@@ -52,8 +52,8 @@
   mysqli_stmt_close($stmt);
 
   if (!$row) {
-    $_SESSION['flash_error'] = 'Record tidak ditemukan.';
-    redirect_ke('read.php');
+    $_SESSION['flash_error_bio'] = 'Record tidak ditemukan.';
+    redirect_ke('read_bio.php');
   }
 
   #Nilai awal (prefill form)
@@ -69,9 +69,9 @@
   $nama_adik = $row['nama_adik'] ?? '';
 
   #Ambil error dan nilai old input kalau ada
-  $flash_error = $_SESSION['flash_error'] ?? '';
-  $old = $_SESSION['old'] ?? [];
-  unset($_SESSION['flash_error'], $_SESSION['old']);
+  $flash_error = $_SESSION['flash_error_bio'] ?? '';
+  $old = $_SESSION['old_bio'] ?? [];
+  unset($_SESSION['flash_error_bio'], $_SESSION['old_bio']);
   if (!empty($old)) {
     $nim  = $old['nim'] ?? $nim;
     $nama = $old['nama'] ?? $nama;
@@ -118,13 +118,13 @@
             <?= $flash_error; ?>
           </div>
         <?php endif; ?>
-        <form action="proses_update.php" method="POST">
+        <form action="proses_update_bio.php" method="POST">
 
           <input type="text" name="id" value="<?= (int)$id; ?>">
 
           <label for="txtNim"><span>Nim:</span>
             <input type="text" id="txtNim" name="txtNimEd" 
-              placeholder="Masukkan nim" required autocomplete="name"
+              placeholder="Masukkan NIM" required autocomplete="name"
               value="<?= !empty($nim) ? $nim : '' ?>">
           </label>
 
@@ -133,13 +133,13 @@
               placeholder="Masukkan nama lengkap" required autocomplete="name"
               value="<?= !empty($nama) ? $nama : '' ?>">
 
-          <label for="txtTempatLahir"><span>Tempat Lahir:</span>
-            <input type="text" id="txtTempatLahir" name="txtTempatLahirEd" 
+          <label for="txtT4Lahir"><span>Tempat Lahir:</span>
+            <input type="text" id="txtT4Lahir" name="txtT4LahirEd" 
               placeholder="Masukkan tempat lahir" required autocomplete="name"
               value="<?= !empty($tempat_lahir) ? $tempat_lahir : '' ?>">
 
-          <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
-            <input type="date" id="txtTanggalLahir" name="txtTanggalLahirEd" 
+          <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+            <input type="date" id="txtTglLhr" name="txtTglLhrEd" 
               placeholder="Masukkan tanggal lahir" required
               value="<?= !empty($tanggal_lahir) ? $tanggal_lahir : '' ?>">
 
@@ -153,23 +153,23 @@
               placeholder="Masukkan pasangan" required autocomplete="name"
               value="<?= !empty($pasangan) ? $pasangan : '' ?>">
 
-          <label for="txtPekerjaan"><span>Pekerjaan:</span>
-            <input type="text" id="txtPekerjaan" name="txtPekerjaanEd" 
+          <label for="txtkerja"><span>Pekerjaan:</span>
+            <input type="text" id="txtkerja" name="txtkerjaEd" 
               placeholder="Masukkan pekerjaan" required autocomplete="name"
               value="<?= !empty($pekerjaan) ? $pekerjaan : '' ?>">
 
-          <label for="txtNamaOrtu"><span>Nama Orang Tua:</span>
-            <input type="text" id="txtNamaOrtu" name="txtNamaOrtuEd" 
+          <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+            <input type="text" id="txtNmOrtu" name="txtNmOrtuEd" 
               placeholder="Masukkan nama orang tua" required autocomplete=""
               value="<?= !empty($nama_ortu) ? $nama_ortu : '' ?>">
 
-          <label for="txtNamaKakak"><span>Nama Kakak:</span>
-            <input type="" id="" name="" 
-              placeholder="" required autocomplete=""
+          <label for="txtNmKakak"><span>Nama Kakak:</span>
+            <input type="text" id="txtNmKakak" name="txtNmKakakEd" 
+              placeholder="Masukkan nama kakak" required autocomplete=""
               value="<?= !empty($nama_kakak) ? $nama_kakak : '' ?>">
 
-          <label for=""><span>Nama Adik:</span>
-            <input type="text" id="txtNamaAdik" name="txtNamaAdikEd" 
+          <label for="txtNmAdik"><span>Nama Adik:</span>
+            <input type="text" id="txtNmAdik" name="txtNmAdikEd" 
               placeholder="Masukkan nama adik" required autocomplete=""
               value="<?= !empty($nama_adik) ? $nama_adik : '' ?>">
           </label>

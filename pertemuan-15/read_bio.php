@@ -11,23 +11,23 @@
 ?>
 
 <?php
-  $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses
-  $flash_error  = $_SESSION['flash_error'] ?? ''; #jika ada error
+  $flash_sukses_bio = $_SESSION['flash_sukses_bio'] ?? ''; #jika query sukses
+  $flash_error_bio  = $_SESSION['flash_error_bio'] ?? ''; #jika ada error
   #bersihkan session ini
-  unset($_SESSION['flash_sukses'], $_SESSION['flash_error']); 
+  unset($_SESSION['flash_sukses_bio'], $_SESSION['flash_error_bio']); 
 ?>
 
-<?php if (!empty($flash_sukses)): ?>
+<?php if (!empty($flash_sukses_bio)): ?>
         <div style="padding:10px; margin-bottom:10px; 
           background:#d4edda; color:#155724; border-radius:6px;">
-          <?= $flash_sukses; ?>
+          <?= $flash_sukses_bio; ?>
         </div>
 <?php endif; ?>
 
-<?php if (!empty($flash_error)): ?>
+<?php if (!empty($flash_error_bio)): ?>
         <div style="padding:10px; margin-bottom:10px; 
           background:#f8d7da; color:#721c24; border-radius:6px;">
-          <?= $flash_error; ?>
+          <?= $flash_error_bio; ?>
         </div>
 <?php endif; ?>
 
@@ -53,14 +53,14 @@
     <tr>
       <td><?= $i++ ?></td>
       <td>
-        <a href="edit.php?id=<?= (int)$row['id']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['nama']); ?>?')" href="proses_delete.php?id=<?= (int)$row['id']; ?>">Delete</a>
+        <a href="edit_bio.php?id=<?= (int)$row['id']; ?>">Edit</a>
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['nama_lengkap']); ?>?')" href="proses_delete_bio.php?id=<?= (int)$row['id']; ?>">Delete</a>
       </td>
       <td><?= $row['id']; ?></td>
       <td><?= htmlspecialchars($row['nim']); ?></td>
       <td><?= htmlspecialchars($row['nama_lengkap']); ?></td>
-      <td><?= htmlspecialchars($row['tmpt_lahir']); ?></td>
-      <td><?= formatTanggal(htmlspecialchars($row['tgl_lahir'])); ?></td>
+      <td><?= htmlspecialchars($row['tempat_lahir']); ?></td>
+      <td><?= formatTanggal(htmlspecialchars($row['tanggal_lahir'])); ?></td>
       <td><?= htmlspecialchars($row['hobi']); ?></td>
       <td><?= htmlspecialchars($row['pasangan']); ?></td>
       <td><?= htmlspecialchars($row['pekerjaan']); ?></td>
