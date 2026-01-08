@@ -39,7 +39,7 @@
     jika ada kesalahan, tampilkan penanda error.
   */
   $stmt = mysqli_prepare($conn, "SELECT id, nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik 
-                                    FROM tbl_pengunjung_biodata_mahasiswa WHERE id = ? LIMIT 1");
+                                    FROM tbl_pengunjung WHERE id = ? LIMIT 1");
   if (!$stmt) {
     $_SESSION['flash_error_bio'] = 'Query tidak benar.';
     redirect_ke('read_bio.php');
@@ -118,67 +118,65 @@
             <?= $flash_error; ?>
           </div>
         <?php endif; ?>
-        <form action="proses_update_bio.php" method="POST">
+      <form action="proses_update_bio.php" method="POST" class="edit-form">
+    <input type="hidden" name="id" value="<?= (int)$id; ?>">
 
-          <input type="text" name="id" value="<?= (int)$id; ?>">
+    <div class="form-group">
+        <label for="txtNim">NIM:</label>
+        <input type="text" id="txtNim" name="txtNimEd" required value="<?= htmlspecialchars($nim) ?>">
+    </div>
 
-          <label for="txtNim"><span>Nim:</span>
-            <input type="text" id="txtNim" name="txtNimEd" 
-              placeholder="Masukkan NIM" required autocomplete="name"
-              value="<?= !empty($nim) ? $nim : '' ?>">
-          </label>
+    <div class="form-group">
+        <label for="txtNmLengkap">Nama Lengkap:</label>
+        <input type="text" id="txtNmLengkap" name="txtNmLengkapEd" required value="<?= htmlspecialchars($nama) ?>">
+    </div>
 
-          <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-            <input type="text" id="txtNmLengkap" name="txtNmLengkapEd" 
-              placeholder="Masukkan nama lengkap" required autocomplete="name"
-              value="<?= !empty($nama) ? $nama : '' ?>">
+    <div class="form-group">
+        <label for="txtT4Lahir">Tempat Lahir:</label>
+        <input type="text" id="txtT4Lahir" name="txtT4LahirEd" required value="<?= htmlspecialchars($tempat_lahir) ?>">
+    </div>
 
-          <label for="txtT4Lahir"><span>Tempat Lahir:</span>
-            <input type="text" id="txtT4Lahir" name="txtT4LahirEd" 
-              placeholder="Masukkan tempat lahir" required autocomplete="name"
-              value="<?= !empty($tempat_lahir) ? $tempat_lahir : '' ?>">
+    <div class="form-group">
+        <label for="txtTglLhr">Tanggal Lahir:</label>
+        <input type="date" id="txtTglLhr" name="txtTglLhrEd" required value="<?= htmlspecialchars($tanggal_lahir) ?>">
+    </div>
 
-          <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-            <input type="date" id="txtTglLhr" name="txtTglLhrEd" 
-              placeholder="Masukkan tanggal lahir" required
-              value="<?= !empty($tanggal_lahir) ? $tanggal_lahir : '' ?>">
+    <div class="form-group">
+        <label for="txtHobi">Hobi:</label>
+        <input type="text" id="txtHobi" name="txtHobiEd" required value="<?= htmlspecialchars($hobi) ?>">
+    </div>
 
-          <label for="txtHobi"><span>Hobi:</span>
-            <input type="text" id="txtHobi" name="txtHobiEd" 
-              placeholder="Masukkan hobi" required autocomplete="name"
-              value="<?= !empty($hobi) ? $hobi : '' ?>">
+    <div class="form-group">
+        <label for="txtPasangan">Pasangan:</label>
+        <input type="text" id="txtPasangan" name="txtPasanganEd" required value="<?= htmlspecialchars($pasangan) ?>">
+    </div>
 
-          <label for="txtPasangan"><span>Pasangan:</span>
-            <input type="text" id="txtPasangan" name="txtPasanganEd" 
-              placeholder="Masukkan pasangan" required autocomplete="name"
-              value="<?= !empty($pasangan) ? $pasangan : '' ?>">
+    <div class="form-group">
+        <label for="txtkerja">Pekerjaan:</label>
+        <input type="text" id="txtkerja" name="txtkerjaEd" required value="<?= htmlspecialchars($pekerjaan) ?>">
+    </div>
 
-          <label for="txtkerja"><span>Pekerjaan:</span>
-            <input type="text" id="txtkerja" name="txtkerjaEd" 
-              placeholder="Masukkan pekerjaan" required autocomplete="name"
-              value="<?= !empty($pekerjaan) ? $pekerjaan : '' ?>">
+    <div class="form-group">
+        <label for="txtNmOrtu">Nama Orang Tua:</label>
+        <input type="text" id="txtNmOrtu" name="txtNmOrtuEd" required value="<?= htmlspecialchars($nama_ortu) ?>">
+    </div>
 
-          <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-            <input type="text" id="txtNmOrtu" name="txtNmOrtuEd" 
-              placeholder="Masukkan nama orang tua" required autocomplete=""
-              value="<?= !empty($nama_ortu) ? $nama_ortu : '' ?>">
+    <div class="form-group">
+        <label for="txtNmKakak">Nama Kakak:</label>
+        <input type="text" id="txtNmKakak" name="txtNmKakakEd" required value="<?= htmlspecialchars($nama_kakak) ?>">
+    </div>
 
-          <label for="txtNmKakak"><span>Nama Kakak:</span>
-            <input type="text" id="txtNmKakak" name="txtNmKakakEd" 
-              placeholder="Masukkan nama kakak" required autocomplete=""
-              value="<?= !empty($nama_kakak) ? $nama_kakak : '' ?>">
+    <div class="form-group">
+        <label for="txtNmAdik">Nama Adik:</label>
+        <input type="text" id="txtNmAdik" name="txtNmAdikEd" required value="<?= htmlspecialchars($nama_adik) ?>">
+    </div>
 
-          <label for="txtNmAdik"><span>Nama Adik:</span>
-            <input type="text" id="txtNmAdik" name="txtNmAdikEd" 
-              placeholder="Masukkan nama adik" required autocomplete=""
-              value="<?= !empty($nama_adik) ? $nama_adik : '' ?>">
-          </label>
-
-
-          <button type="submit">Kirim</button>
-          <button type="reset">Batal</button>
-          <a href="read_bio.php" class="reset">Kembali</a>
-        </form>
+    <div class="button-group">
+        <button type="submit" class="btn-submit">Simpan Perubahan</button>
+        <button type="reset" class="btn-reset">Batal</button>
+        <a href="read_bio.php" class="btn-back">Kembali</a>
+    </div>
+</form>
       </section>
     </main>
 

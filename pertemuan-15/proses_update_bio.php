@@ -75,8 +75,8 @@
   }
 
 
-  if (mb_strlen($nim) < 25) {
-    $errors[] = 'NIM minimal 25 karakter.';
+  if (mb_strlen($nim) > 30) {
+    $errors[] = 'NIM maksimal 30 karakter.';
   }
 
 
@@ -107,7 +107,7 @@
     menyiapkan query UPDATE dengan prepared statement 
     (WAJIB WHERE id = ?)
   */
-  $stmt = mysqli_prepare($conn, "UPDATE tbl_pengunjung_biodata_mahasiswa 
+  $stmt = mysqli_prepare($conn, "UPDATE tbl_pengunjung
                                 SET nim = ?, nama_lengkap = ?, tempat_lahir = ?, tanggal_lahir = ?, hobi = ?, pasangan = ?, pekerjaan = ?, nama_ortu = ?, nama_kakak = ?, nama_adik = ? 
                                 WHERE id = ?");
   if (!$stmt) {
@@ -139,7 +139,7 @@
       'nama_kakak' => $nama_kakak,
       'nama_adik' => $nama_adik
     ];
-    $_SESSION['flash_error_bio'] = 'Data gagal diperbaharui. Silakan coba lagi.';
+    $_SESSION['flash_error_bio'] = 'Data gagal diperbarui. Silakan coba lagi.';
     redirect_ke('edit_bio.php?id='. (int)$id);
   }
   #tutup statement

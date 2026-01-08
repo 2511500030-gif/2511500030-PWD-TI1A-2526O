@@ -23,3 +23,5 @@ Hari ini, Rabu 7.Jan.2026, saya mengerjakan Try Out UAS:<br>
 <li>Mengcopy dan modif kode dari proses_delete.php ke proses_delete_bio.php</li>
 <li>Mengubah semua cid jadi id saja<li>
 <li>Mengubah lokasi table tbl_pengunjung_biodata_mahasiswa untuk semua file bio</li> 
+<li>Buat file baru di database dengan nama data_pengunjung</li>
+<li>Mengganti semua form di file bio yang awalnya data_pengunjung_biodata_mahasiswa menjadi data_pengunjung</li>

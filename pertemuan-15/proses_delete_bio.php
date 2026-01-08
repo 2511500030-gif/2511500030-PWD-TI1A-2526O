@@ -6,7 +6,7 @@
   #validasi cid wajib angka dan > 0
   $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
     'options' => ['min_range' => 1]
-  ]);
+  ]); 
 
   if (!$id) {
     $_SESSION['flash_error'] = 'ID Tidak Valid.';
@@ -16,9 +16,9 @@
   /*
     Prepared statement untuk anti SQL injection.
     menyiapkan query UPDATE dengan prepared statement 
-    (WAJIB WHERE cid = ?)
+    (WAJIB WHERE id = ?)
   */
-  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_pengunjung_biodata_mahasiswa
+  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_pengunjung
                                 WHERE id = ?");
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
