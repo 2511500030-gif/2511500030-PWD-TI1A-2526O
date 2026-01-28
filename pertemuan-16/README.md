@@ -18,3 +18,4 @@ Proses saya mengerjakan UAS ini sebagai berikut:<br>
 <li>Copy kode dari proses_bio.php ke proses_update_bio_dos.php</li>
 <li>Menyesuaikan kode dari proses_bio.php dengan proses_update_bio_dos.php</li>
 <li>Membuat file baru dengan nama proses_delete_bio_dos.php</li>
+<li>Mengcopy kode dari proses_delete.php ke proses_delete_bio_dos.php</li>
