@@ -14,3 +14,6 @@ Proses saya mengerjakan UAS ini sebagai berikut:<br>
 <li>Membuat file baru dengan nama read_bio_dos.php</li>
 <li>Copy kode dari read.php ke read_bio_dos.php</li>
 <li>Menyesuaikan kode di read_bio_dos.php dengan edit_bio_dosen.php</li>
+<li>Membuat file baru dengan nama proses_update_bio_dos.php</li>
+<li>Copy kode dari proses_bio.php ke proses_update_bio_dos.php</li>
+<li>Menyesuaikan kode dari proses_bio.php dengan proses_update_bio_dos.php</li>

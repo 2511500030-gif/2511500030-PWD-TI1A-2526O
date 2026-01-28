@@ -31,7 +31,7 @@
   */
   if (!$id) {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
-    redirect_ke('read.php');
+    redirect_ke('read_bio_dos.php');
   }
 
   /*
@@ -42,7 +42,7 @@
                                     FROM pengunjung_biodata_dosen WHERE id = ? LIMIT 1");
   if (!$stmt) {
     $_SESSION['flash_error'] = 'Query tidak benar.';
-    redirect_ke('read.php');
+    redirect_ke('read_bio_dos.php');
   }
 
   mysqli_stmt_bind_param($stmt, "i", $id);
@@ -53,7 +53,7 @@
 
   if (!$row) {
     $_SESSION['flash_error'] = 'Record tidak ditemukan.';
-    redirect_ke('read.php');
+    redirect_ke('read_bio_dos.php');
   }
 
   #Nilai awal (prefill form)
