@@ -118,12 +118,69 @@
             <?= $flash_error; ?>
           </div>
         <?php endif; ?>
-        <form action="proses_update.php" method="POST">
+        <form action="proses_update_bio_dos.php" method="POST">
 
-          <input type="text" name="cid" value="<?= (int)$cid; ?>">
+          <input type="text" name="id" value="<?= (int)$id; ?>">
 
-          <label for="txtNama"><span>Nama:</span>
-            <input type="text" id="txtNama" name="txtNamaEd" 
+          <label for="txtKodeDos"><span>Kode Dosen:</span>
+            <input type="text" id="txtKodeDos" name="txtKodeDos" 
+              placeholder="Masukkan kode dosen" required autocomplete="name"
+              value="<?= !empty($kodedos) ? $kodedos : '' ?>">
+          </label>
+
+          <label for="txtNmDosen"><span>Nama Dosen:</span>
+            <input type="text" id="txtNmDosen" name="txtNmDosen" 
+              placeholder="Masukkan nama dosen" required autocomplete="name"
+              value="<?= !empty($nama) ? $nama : '' ?>">
+          </label>
+
+          <label for="txtAlRmh"><span>Alamat:</span>
+            <input type="text" id="txtAlRmh" name="txtAlRmh"
+              placeholder="Masukkan alamat dosen" required
+              value="<?= !empty($alamat) ? $alamat : '' ?>">
+          </label>
+
+          <label for="txtTglDosen"><span>Tanggal Jadi Dosen:</span>
+            <input type="date" id="txtTglDosen" name="txtTglDosen"
+              placeholder="" required
+              value="<?= !empty($tanggal) ? $tanggal : '' ?>">
+          </label>
+
+          <label for="txtJJA"><span>JJA:</span>
+            <input type="text" id="txtJJA" name="txtJJA"
+              placeholder="" required
+              value="<?= !empty($jja) ? $jja : '' ?>">
+          </label>
+
+          <label for="txtProdi"><span>Prodi:</span>
+            <input type="text" id="txtProdi" name="txtProdi"
+              placeholder="" required
+              value="<?= !empty($prodi) ? $prodi : '' ?>">
+          </label>
+
+          <label for="txtNoHP"><span>No HP:</span>
+            <input type="text" id= "txtNoHP" name= "txtNoHP"
+              placeholder="" required
+              value="<?= !empty($nohp) ? $nohp : '' ?>">
+          </label>
+
+          <label for= "txNamaPasangan"><span>Nama Pasangan:</span>
+            <input type= "text" id= "txNamaPasangan" name= "txNamaPasangan"
+              placeholder="" required
+              value="<?= !empty($pasangan) ? $pasangan : '' ?>">
+          </label>
+
+          <label for= "txtNmAnak"><span>Nama Anak:</span>
+            <input type= "text" id= "txtNmAnak" name= "txtNmAnak"
+              placeholder="" required
+              value="<?= !empty($anak) ? $anak : '' ?>">
+          </label>
+
+          <label for= "txtBidangIlmu"><span>Bidang Ilmu:</span>
+            <input type= "text" id= "txtBidangIlmu" name= "txtBidangIlmu"
+              placeholder="" required
+              value="<?= !empty($ilmu) ? $ilmu : '' ?>">
+          </label>
               placeholder="Masukkan nama" required autocomplete="name"
               value="<?= !empty($nama) ? $nama : '' ?>">
           </label>
@@ -147,7 +204,7 @@
 
           <button type="submit">Kirim</button>
           <button type="reset">Batal</button>
-          <a href="read.php" class="reset">Kembali</a>
+          <a href="read_bio_dos.php" class="reset">Kembali</a>
         </form>
       </section>
     </main>
