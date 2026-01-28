@@ -20,3 +20,4 @@ Proses saya mengerjakan UAS ini sebagai berikut:<br>
 <li>Membuat file baru dengan nama proses_delete_bio_dos.php</li>
 <li>Mengcopy kode dari proses_delete.php ke proses_delete_bio_dos.php</li>
 <li>Memodifikasi ulang kode di proses_delete_bio.php</li>
+<li>Menambahkan file baru dengan nama read_inc_bio.php</li>

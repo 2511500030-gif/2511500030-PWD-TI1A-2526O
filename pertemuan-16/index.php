@@ -40,7 +40,7 @@ require_once __DIR__ . '/fungsi.php';
 
     <section id="biodata">
       <h2>Biodata Dosen</h2>
-      <form action="proses_bio.php" method="POST">
+      <form action="proses_bio_dos.php" method="POST">
 
         <label for="txtKodeDos"><span>Kode Dosen:</span>
           <input type="text" id="txtKodeDos" name="txtKodeDos" placeholder="Masukkan Kode Dosen" required>
@@ -165,7 +165,7 @@ require_once __DIR__ . '/fungsi.php';
       <br>
       <hr>
       <h2>Yang menghubungi kami</h2>
-      <?php include 'read_inc.php'; ?>
+      <?php include 'read_inc_bio.php'; ?>
     </section>
   </main>
 

@@ -37,15 +37,15 @@
     <th>Aksi</th>
     <th>ID</th>
     <th>Kode Dosen</th>
-    <th>Nama</th>
-    <th>Alamat</th>
+    <th>Nama Dosen</th>
+    <th>Alamat Dosen</th>
     <th>Tanggal Lahir</th>
-    <th>JJA</th>
-    <th>Prodi</th>
-    <th>No HP</th>
-    <th>Pasangan</th>
-    <th>Anak</th>
-    <th>Ilmu</th>
+    <th>JJA Dosen</th>
+    <th>Homebase Prodi</th>
+    <th>Nomor HP</th>
+    <th>Nama Pasangan</th>
+    <th>Nama Anak</th>
+    <th>Bidang Ilmu Dosen</th>
   </tr>
   <?php $i = 1; ?>
   <?php while ($row = mysqli_fetch_assoc($q)): ?>
