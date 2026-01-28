@@ -23,3 +23,4 @@ Proses saya mengerjakan UAS ini sebagai berikut:<br>
 <li>Menambahkan file baru dengan nama read_inc_bio.php</li>
 <li>Mengcopy ulang kode dari read_inc.php ke read_inc_bio.php</li>
 <li>Menyesuaikan kode di read_inc_bio.php</li>
+<li>Modifikasi ulang kode di edit_bio_dosen.php</li>

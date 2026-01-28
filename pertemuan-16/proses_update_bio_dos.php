@@ -81,11 +81,7 @@
   if (mb_strlen($alamat) < 10) {
     $errors[] = 'Alamat minimal 10 karakter.';
   }
-
-if (mb_strlen($captcha) < 6) {
-    $errors[] = 'Captcha salah.';
-  }
-
+  
   /*
   kondisi di bawah ini hanya dikerjakan jika ada error, 
   simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
