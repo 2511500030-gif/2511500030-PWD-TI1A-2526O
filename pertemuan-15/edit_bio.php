@@ -9,7 +9,7 @@
     'options' => ['min_range' => 1] artinya cid harus ≥ 1 
     (bukan 0, bahkan bukan negatif, bukan huruf, bukan HTML).
   */
-  $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
+  $nim = filter_input(INPUT_GET, 'nim', FILTER_VALIDATE_INT, [
     'options' => ['min_range' => 1]
   ]);
   /*
@@ -29,7 +29,7 @@
     kembalikan pengguna ke halaman awal (read.php) sembari 
     mengirim penanda error.
   */
-  if (!$id) {
+  if (!$nim) {
     $_SESSION['flash_error_bio'] = 'Akses tidak valid.';
     redirect_ke('read_bio.php');
   }
@@ -38,14 +38,14 @@
     Ambil data lama dari DB menggunakan prepared statement, 
     jika ada kesalahan, tampilkan penanda error.
   */
-  $stmt = mysqli_prepare($conn, "SELECT id, nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik 
-                                    FROM tbl_pengunjung WHERE id = ? LIMIT 1");
+  $stmt = mysqli_prepare($conn, "SELECT nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik 
+                                    FROM tbl_pengunjung WHERE nim = ? LIMIT 1");
   if (!$stmt) {
     $_SESSION['flash_error_bio'] = 'Query tidak benar.';
     redirect_ke('read_bio.php');
   }
 
-  mysqli_stmt_bind_param($stmt, "i", $id);
+  mysqli_stmt_bind_param($stmt, "i", $nim);
   mysqli_stmt_execute($stmt);
   $res = mysqli_stmt_get_result($stmt);
   $row = mysqli_fetch_assoc($res);
@@ -119,7 +119,7 @@
           </div>
         <?php endif; ?>
       <form action="proses_update_bio.php" method="POST" class="edit-form">
-    <input type="hidden" name="id" value="<?= (int)$id; ?>">
+    <input type="hidden" name="nim" value="<?= (int)$nim; ?>">
 
     <div class="form-group">
         <label for="txtNim">NIM:</label>
@@ -132,8 +132,8 @@
     </div>
 
     <div class="form-group">
-        <label for="txtT4Lahir">Tempat Lahir:</label>
-        <input type="text" id="txtT4Lahir" name="txtT4LahirEd" required value="<?= htmlspecialchars($tempat_lahir) ?>">
+        <label for="txtT4Lhr">Tempat Lahir:</label>
+        <input type="text" id="txtT4Lhr" name="txtT4LhrEd" required value="<?= htmlspecialchars($tempat_lahir) ?>">
     </div>
 
     <div class="form-group">
