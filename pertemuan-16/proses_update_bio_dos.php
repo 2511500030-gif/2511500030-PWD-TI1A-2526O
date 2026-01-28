@@ -81,7 +81,7 @@
   if (mb_strlen($alamat) < 10) {
     $errors[] = 'Alamat minimal 10 karakter.';
   }
-  
+
   /*
   kondisi di bawah ini hanya dikerjakan jika ada error, 
   simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
@@ -119,7 +119,7 @@
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
-  mysqli_stmt_bind_param($stmt, "ssssssssssi", $kodedos, $nama, $alamat, $tanggal, $jja, $prodi, $nohp, $pasangan, $anak, $ilmu, $id);
+  mysqli_stmt_bind_param($stmt, "sssssssssss", $kodedos, $nama, $alamat, $tanggal, $jja, $prodi, $nohp, $pasangan, $anak, $ilmu, $id);
   if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
     unset($_SESSION['old']);
     /*
